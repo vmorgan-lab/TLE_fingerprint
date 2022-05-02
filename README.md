@@ -3,60 +3,55 @@ Computation of TLE connectivity profiles and their distance to TLE functional an
 
 Morgan VL. Sainburg LE, Johnson GW, Janson A, Levine KK, Rogers BP, Chang C, Englot DJ. Presurgical temporal lobe epilepsy connectome fingerprint for seizure outcome prediction. Brain Communications 2022, in press.
 
+__________________________________________________________________________________
 TLE_fingerprint_distance.m
 [MEFC_pat, MESC_pat, MEFCSC_pat, pat_profile] = TLE_fingerprint_distance(model,pat_data, side_1)
 
-% This function will plot patient profiles and the TLE fingerprint on a
-% radar plot as shown in Morgan et al. Brain Communications 2022 Figure 5
-% subplots
-%
-% INPUTS - 
-% model = matrix of the TLE fingerprint in 40 x 6 x 2
-%   40 are 40 permutations of seizure free patients
-%   6 are lobes = prefrontal, parietal, occipital, temporal,
-%   motor/somatosensory and subcortical
-%   2 are FC and SC
-% pat_data = matrix of the invidual patient data in n xn n x 2 = nodes x
-% nodes x FC and SC
-%
-% side_1 = side of focus - left = 0, right = 1
-%
-% this program loads in the excel spreadsheet - node_info.xlsx which
-% contains info about the nodes, their order, their side and their lobe.
-% Interest column should be one for the nodes of interest.
-%
-% pat_data(:,:,1)=all_subj_FC(36,:,:);
-% pat_data(:,:,2)=all_subj_SC(36,:,:);
-% model(:,:,1)=w_perm_FC_lobe(:,1:6,1);
-% model(:,:,2)=w_perm_FC_lobe(:,1:6,2);
-%
-% OUTPUTS -
-% MEFC = functional connectivity distance to model rifile
-% MESC = structural connectivity distance to model profile
-% totl = total distance to model profile
-% pat_profile = 6 lobes x 2 (FC and SC) that can be plotted with plot_profile.m 
-%
-% created by VL Morgan April 2022
+___________________________________________________________________________________
+This function will plot patient profiles and the TLE fingerprint on a radar plot as shown in Morgan et al. Brain Communications 2022 Figure 5 subplots
+
+INPUTS – 
+model = matrix of the TLE fingerprint in 40 x 6 x 2
+	40 are 40 permutations of seizure free patients
+	6 are lobes = prefrontal, parietal, occipital, temporal,
+	motor/somatosensory and subcortical
+	2 are FC and SC
+
+pat_data = matrix of the invidual patient data in n xn n x 2 = nodes x nodes x FC and SC
+
+side_1 = side of focus - left = 0, right = 1
+
+this program loads in the excel spreadsheet - node_info.xlsx which contains info about the nodes, their order, their side and their lobe. Interest column should be one for the nodes of interest.
+
+pat_data(:,:,1)=all_subj_FC(36,:,:);
+pat_data(:,:,2)=all_subj_SC(36,:,:);
+model(:,:,1)=w_perm_FC_lobe(:,1:6,1);
+model(:,:,2)=w_perm_FC_lobe(:,1:6,2);
+
+OUTPUTS –
+MEFC = functional connectivity distance to model profile
+MESC = structural connectivity distance to model profile
+total = total distance to model profile
+pat_profile = 6 lobes x 2 (FC and SC) that can be plotted with plot_profile.m 
+___________________________________________________________________________________________
 
 plot_profile.m
 
 plot_profile(model,pat_profile)
+_______________________________________________________________________________________________
 
-% This function will plot patient profiles and the TLE fingerprint on a
-% radar plot as shown in Morgan et al. Brain Communications 2022 Figure 5
-% subplots
-%
-% inputs - 
-% model = matrix of the TLE fingerprint in 40 x 6 x 2
-%   40 are 40 permutations of seizure free patients
-%   6 are lobes = prefrontal, parietal, occipital, temporal,
-%   motor/somatosensory and subcortical
-%   2 are FC and SC
-% pat_profile = matrix of the invidual patient profile outut from
-%   TLE_fingerprint_distance.m matrix in 6 x 2
-%   6 are lobes = prefrontal, parietal, occipital, temporal,
-%   motor/somatosensory and subcortical
-%   2 are FC and SC
+INPUTS - 
+model = matrix of the TLE fingerprint in 40 x 6 x 2
+	40 are 40 permutations of seizure free patients
+	6 are lobes = prefrontal, parietal, occipital, temporal,
+	motor/somatosensory and subcortical
+	2 types of connectivy are FC and SC
+
+pat_profile = matrix of the invidual patient profile output from TLE_fingerprint_distance.m matrix in 6 x 2
+	6 are lobes = prefrontal, parietal, occipital, temporal, motor/somatosensory and subcortical
+	2 types of connectivity are FC and SC
+
+___________________________________________________________________________________________
 
 Other files – 
 Model_data.mat – matlab data with a sample patient (pat_data) and the model data (model) for use in functions above.
