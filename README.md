@@ -21,7 +21,7 @@ pat_data = matrix of the invidual patient data in n xn n x 2 = nodes x nodes x F
 
 side_1 = side of focus - left = 0, right = 1
 
-this program loads in the excel spreadsheet - node_info.xlsx which contains info about the nodes, their order, their side and their lobe. Interest column should be one for the nodes of interest.
+this program loads in the excel spreadsheet - node_info.csv which contains info about the nodes, their order, their side and their lobe. Interest column should be one for the nodes of interest.
 
 pat_data(:,:,1)=all_subj_FC(36,:,:);
 pat_data(:,:,2)=all_subj_SC(36,:,:);
@@ -61,6 +61,7 @@ node_info.csv – information on the 117 regions of interest used for this resea
 For creating your own patient data:
 1.	You need data in the regions in node_info.csv (or edit the csv file)
 2.	nwT1W3D_0001.nii is a template image in MNI space
-3.	MultiAtlas_subj.nii is an atlas of the regions in the node_info.csv that is computed from the nwT1W3D_0001.nii.
+3.	MultiAtlas_subj.nii is an atlas of the regions in the node_info.csv that is computed from the nwT1W3D_0001.nii. This was created using MultiAtlas segmentation 
+	https://github.com/VUIIS/Multi-Atlas-v3.0.0
 4.	Connectomes must be in units of standard deviations from healthy controls. 
 
