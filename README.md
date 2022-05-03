@@ -1,7 +1,7 @@
 # TLE_fingerprint
 Computation of TLE connectivity profiles and their distance to TLE functional and structural MRI fingerprint. Plots profile for the individual patient.
 
-Morgan VL. Sainburg LE, Johnson GW, Janson A, Levine KK, Rogers BP, Chang C, Englot DJ. Presurgical temporal lobe epilepsy connectome fingerprint for seizure outcome prediction. Brain Communications 2022, in press.
+Morgan VL, Sainburg LE, Johnson GW, Janson A, Levine KK, Rogers BP, Chang C, Englot DJ. Presurgical temporal lobe epilepsy connectome fingerprint for seizure outcome prediction. Brain Communications 2022, in press.
 
 __________________________________________________________________________________
 TLE_fingerprint_distance.m
