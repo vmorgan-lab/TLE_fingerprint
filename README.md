@@ -72,5 +72,6 @@ To do age correction of input patient data:
 	SC should be in mrtrix3 stramline count values
 3.	need age of patient in years and length of time series for FC
 4.	run FCR_to_ageZ.m to convert FC r values to Z and then age correct resulting in std from age matched control
-5.	run SC_to_age_log.m to convert SC to log values and then age correct resulting in std from age matched control 	
+5.	run SC_to_age_log.m to convert SC to log values and then age correct resulting in std from age matched control 
+6.	can test these by loading before_age_corr.mat and checking the first outputs with after_age_corr.mat	
 
