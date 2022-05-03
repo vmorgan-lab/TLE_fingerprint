@@ -5,6 +5,7 @@ Morgan VL. Sainburg LE, Johnson GW, Janson A, Levine KK, Rogers BP, Chang C, Eng
 
 __________________________________________________________________________________
 TLE_fingerprint_distance.m
+
 [MEFC_pat, MESC_pat, MEFCSC_pat, pat_profile] = TLE_fingerprint_distance(model,pat_data, side_1)
 
 ___________________________________________________________________________________
@@ -64,4 +65,12 @@ For creating your own patient data:
 3.	MultiAtlas_subj.nii is an atlas of the regions in the node_info.csv that is computed from the nwT1W3D_0001.nii. This was created using MultiAtlas segmentation 
 	https://github.com/VUIIS/Multi-Atlas-v3.0.0
 4.	Connectomes must be in units of standard deviations from healthy controls. 
+
+To do age correction of input patient data:
+1. 	Start with patient data in regions ordered by node_info ID
+2. 	FC should be in correlation r values
+	SC should be in mrtrix3 stramline count values
+3.	need age of patient in years and length of time series for FC
+4.	run FCR_to_ageZ.m to convert FC r values to Z and then age correct resulting in std from age matched control
+5.	run SC_to_age_log.m to convert SC to log values and then age correct resulting in std from age matched control 	
 
