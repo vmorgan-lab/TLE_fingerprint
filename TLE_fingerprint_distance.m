@@ -28,7 +28,6 @@ function [MEFC_pat, MESC_pat, MEFCSC_pat, pat_profile] = TLE_fingerprint_distanc
 % MESC = structural connectivity distance to model profile
 % total = total distance to model profile
 % pat_profile = 6 lobes x 2 (FC and SC) that can be plotted with plot_profile.m 
-readtable
 % created by VL Morgan April 2022
 
 % check to see if side of focus is entered
